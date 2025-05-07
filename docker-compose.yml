@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: kubo_container
+    restart: always
+    ports:
+      - "8081:8080"
+    networks:
+      - kubo_net
+
+networks:
+  myapp_net:
+    driver: bridge
