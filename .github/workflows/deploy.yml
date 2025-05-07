@@ -18,7 +18,7 @@ jobs:
       with:
         host: ${{ secrets.VPS_HOST }}
         username: ${{ secrets.VPS_USER }}
-        key: ${{ secrets.VPS_KEY }}
+        key: ${{ secrets.VPS_SSH_KEY }}
         port: 22
         source: "."
         target: "/var/www/kubo"
@@ -28,7 +28,7 @@ jobs:
       with:
         host: ${{ secrets.VPS_HOST }}
         username: ${{ secrets.VPS_USER }}
-        key: ${{ secrets.VPS_KEY }}
+        key: ${{ secrets.VPS_SSH_KEY }}
         port: 22
         script: |
           cd /var/www/kubo
