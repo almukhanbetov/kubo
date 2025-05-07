@@ -6,6 +6,15 @@ services:
     container_name: kubo_container
     restart: always
     ports:
-      - "8081:8081"
-   
+      - "8081:8081"  # внешне доступен на 8081, внутри контейнера 8080
+    depends_on:
+      - redis
+    env_file:
+      - .env
 
+  redis:
+    image: redis:alpine
+    container_name: kubo_redis
+    restart: always
+    ports:
+      - "6379:6379"
